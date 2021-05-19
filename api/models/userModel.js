@@ -21,6 +21,8 @@ let UserSchema = new Schema(
     },
     avtarUrl: {
       type: String,
+      default:
+        "https://cdn.jsdelivr.net/gh/park-e/cdn@latest/Icons/profile.svg",
     },
     todos: [
       {
