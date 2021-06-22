@@ -22,4 +22,4 @@ let toDoSchema = new Schema(
   { timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" } }
 );
 
-module.exports = mongoose.model("TODOS",toDoSchema);
+module.exports = mongoose.model("TODOS", toDoSchema);

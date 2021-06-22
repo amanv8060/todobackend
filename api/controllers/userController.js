@@ -11,7 +11,6 @@ exports.createUser = async (req, res) => {
   });
 
   const user = new User({
-    name: req.body.name,
     email: req.body.email,
     password: hash,
   });
@@ -39,7 +38,7 @@ exports.userSignin = async (req, res) => {
   }
 
   const token = jwt.sign(
-    { id: user.id,},
+    { id: user.id, },
     process.env.SECRET_KEY,
     {
       expiresIn: 604800, // 7 Days (in sec)
@@ -53,7 +52,6 @@ exports.userSignin = async (req, res) => {
   });
   res.status(200).send({
     id: user._id,
-    name: user.name,
     email: user.email,
     avtarUrl: user.avtarUrl,
     token: token,
